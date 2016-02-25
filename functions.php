@@ -95,5 +95,9 @@ $post_data = get_post($post->ID, ARRAY_A);
 $slug = $post_data['post_name'];
 return $slug; }
 
+//Add Post Featured Image
+add_theme_support('post-thumbnails');
+
+
 
 ?>

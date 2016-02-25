@@ -32,7 +32,7 @@
   <div class="container">
     <div class="flex-logo-row">
       <div class="flex-logo-child1">
-          <img src="http://lg.dev/wp-content/uploads/2016/01/logo_transparent.png" alt="logo">
+          <img src="/wp-content/uploads/2016/01/logo_transparent.png" alt="logo">
       </div>
 
       <div class="flex-logo-child2">

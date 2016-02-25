@@ -1,13 +1,10 @@
 <?php get_header(); ?>
   
   <!-- Jumbotron -->
-      <div class="jumbotron">
-        <h1>Slider</h1>
-        <ol>
-          <li>reseal closures</li>
-          <li>food safety</li>
-          <li>omnimark</li>
-        </ol>
+      <div class="slider">
+        <?php 
+            echo do_shortcode("[metaslider id=244]"); 
+        ?>
       </div>
   
 
@@ -73,8 +70,8 @@
 
      <hr>
             
-  <div class="row">
-    <div class="col-md-4 contact">
+  <div class="row home-multi">
+    <div class="contact third">
     <h3>Contact</h3>
       <p>Lauterbach Group, Inc</p>
       <p>W222 N5710 Miller Way</p>
@@ -86,7 +83,7 @@
 
     </div>
 
-    <div class="col-md-4">
+    <div class="follow third">
       <h3>Follow Us</h3>
 
           <!--Signup Form from Mailchimp-->
@@ -123,9 +120,33 @@
 
     </div>
 
-    <div class="col-md-4" id="news-blog">
-      
-      <?php if (dynamic_sidebar('news-tertiary' ) ); ?>
+    <div class="news third" id="news-blog">
+        
+        <h3>News</h3>
+
+        <?php
+
+            $args = array(
+              'post_type'     => 'news',
+              'post_status'   => 'publish',
+              'post_per_page' => '6',
+              'order'         => 'DESC',
+              'orderby'       => 'date'
+              
+              );
+
+            $query = new WP_Query ( $args );
+          ?>
+
+          <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+              <ul class="front-page-posts">
+                <li>
+                  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                </li>
+              </ul>
+
+          <?php endwhile; endif; wp_reset_postdata(); ?>
 
     </div>
   </div>
