@@ -37,12 +37,20 @@
               );
 
             $query = new WP_Query ( $args );
+global $page_tags,$exclude_posts ; 
+$page_tags = array(); $exclude_posts = array();
           ?>
         
 
             <div class="like-content-posts">
 
-              <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+              <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();  
+              $t = wp_get_object_terms($query->post->ID,  'about-me' );
+              $page_tags = array_merge($page_tags,$t);
+              $t = wp_get_object_terms($query->post->ID,  'my-likes' );
+              $page_tags = array_merge($page_tags,$t);
+              $exclude_posts[] = $query->post->ID;
+              ?>
 
                 <div class="like-posts">
                   <h4><?php the_title(); ?></h4>

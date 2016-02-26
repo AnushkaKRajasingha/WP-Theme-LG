@@ -1,22 +1,63 @@
 <h3>Products &amp; Markets</h3>
 
 <div class="row">
-        <div class="col-md-12">
-          <div class="flex-container-grid">
+	<div class="col-md-12">
+		<div class="flex-container-grid">
           
-          <div class="flex-grid-child"><img src="/wp-content/uploads/2016/01/beer.jpg" alt="" title="" class="grid-img"><h4>Film &amp; Re-Seal</h4></div>
-          <div class="flex-grid-child"><img src="/wp-content/uploads/2016/01/beer.jpg" alt="" title="" class="grid-img"><h4>Coupon &amp; Dry Peel</h4></div>
-          <div class="flex-grid-child"><img src="/wp-content/uploads/2016/01/beer.jpg" alt="" title="" class="grid-img"><h4>Food &amp; Beverage</h4></div>
-          <div class="flex-grid-child"><img src="/wp-content/uploads/2016/01/beer.jpg" alt="" title="" class="grid-img"><h4>Retail</h4></div>
-          <div class="flex-grid-child"><img src="/wp-content/uploads/2016/01/beer.jpg" alt="" title="" class="grid-img"><h4>Security</h4></div>
-          <div class="flex-grid-child"><img src="/wp-content/uploads/2016/01/beer.jpg" alt="" title="" class="grid-img"><h4>Decal &amp; Bumper</h4></div>
-          <div class="flex-grid-child"><img src="/wp-content/uploads/2016/01/beer.jpg" alt="" title="" class="grid-img"><h4>Variable Print</h4></div>
-          <div class="flex-grid-child"><img src="/wp-content/uploads/2016/01/beer.jpg" alt="" title="" class="grid-img"><h4>Brewery &amp; Distillery</h4></div>
-          <div class="flex-grid-child"><img src="/wp-content/uploads/2016/01/beer.jpg" alt="" title="" class="grid-img"><h4>Pet</h4></div>
-          <div class="flex-grid-child"><img src="/wp-content/uploads/2016/01/beer.jpg" alt="" title="" class="grid-img"><h4>Paper</h4></div>
+         <?php
+									global $page_tags, $exclude_posts;
+									if ($page_tags) {
+										$tag_ids = array ();
+										foreach ( $page_tags as $_tag ) {
+											$tag_ids [] = $_tag->term_id;
+										}										
+										$page_tags = null;
+										foreach ( $exclude_posts as $_expost ) {
+											$exclude_posts_ids [] = $_expost;
+										}
+										// var_dump($exclude_posts_ids);
+										$args = array (
+												'post_type' => 'markets-subcontent',
+												'tax_query' => array (
+														'relation' => 'OR',
+														array (
+																'taxonomy' => 'about-me',
+																'field' => 'term_id',
+																'terms' => $tag_ids 
+														),
+														array (
+																'taxonomy' => 'my-likes',
+																'field' => 'term_id',
+																'terms' => $tag_ids 
+														) 
+												) 
+										);
+										$mytaxquery = new WP_Query ( $args );										
+										while ( $mytaxquery->have_posts () ) :											
+											$mytaxquery->the_post ();
+											if (! in_array ( $mytaxquery->post->ID, $exclude_posts_ids )) {
+												?>
+
+<div class="flex-grid-child">
+				<a href="<?php echo the_permalink(); ?>"
+					title="View <?php the_title(); ?>" class="grid-img">
+					<div class="fig">
+					<?php the_post_thumbnail(array(150,150)); ?>
+					</div>
+					<!--/.fig-->
+					<h4><?php the_title(); ?></h4>
+				</a>
+			</div>
+			<!--/flex-grid-child -->
+
+<?php } endwhile ; wp_reset_query (); 
+									} else {
+										echo 'No related item found.';
+									}
+									?>
 
           </div>
 
 
-        </div>
-     </div>
+	</div>
+</div>
