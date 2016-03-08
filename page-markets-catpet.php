@@ -1,6 +1,6 @@
 <?php
 /*
-  Template Name:  Markets-catDryPeel
+  Template Name:  Markets-catpet
 */
 ?>
 
@@ -20,7 +20,7 @@
                 <h1><?php the_title(); ?></h1>
               </div>
 
-              <?php the_content(); ?>
+              <!--<?php the_content(); ?>-->
 
                
 
@@ -33,12 +33,13 @@
 
             $args = array(
               'post_type' => 'markets-subcontent',
-              'category_name' => 'dry-peel'
+              'category_name' => 'catpet',
+              'posts_per_page' => 10
               );
 
             $query = new WP_Query ( $args );
-global $page_tags,$exclude_posts ; 
-$page_tags = array(); $exclude_posts = array();
+            global $page_tags,$exclude_posts ; 
+            $page_tags = array(); $exclude_posts = array();
           ?>
         
 
@@ -54,7 +55,8 @@ $page_tags = array(); $exclude_posts = array();
 
                 <div class="like-posts">
                   <h4><?php the_title(); ?></h4>
-                  <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'medium' ); ?></a>
+                    <?php the_content(); ?>
+                  
                 </div>
 
               <?php endwhile; endif; wp_reset_postdata(); ?>

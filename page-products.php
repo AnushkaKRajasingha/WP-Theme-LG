@@ -40,7 +40,7 @@
 
      </div>
 
-     <?php get_sidebar('products-imggrid'); ?>
+     <!-- <?php get_sidebar('products-imggrid'); ?> -->
 
       
 <?php get_footer(); ?>

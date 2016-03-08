@@ -10,10 +10,6 @@ Dscription: Lauterbach Group Home Website
 /*******MOCK UP FIXES**********/
 
 
-
-
-
-
 /*******TO MATCH MOCK UP WIDTH*******/
 
 /*.widget.home-page-buckets img {
@@ -39,9 +35,9 @@ body {
 	min-height: 100vh;
 }
 
-/*.row {
+.row {
 	flex: 1;
-}*/
+}
 
 .navbar-wrapper {
     margin-bottom: 15px;
@@ -294,7 +290,7 @@ border-top: solid 1px;
 }
 
 .fa-my {
-    font-size: 3em !important;
+    font-size: 3em;
     vertical-align: middle;
 }
 
@@ -477,22 +473,6 @@ div.social {
     color: darkblue;
 }
 
-.row.home-multi {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-
-.follow.third {
-    
-   flex-basis: 40%;
-   margin-left: 10em;
-}
-
-.contact.third, .news.third {
-    flex-basis: 20%;
-}
 
 
 

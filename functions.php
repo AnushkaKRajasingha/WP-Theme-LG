@@ -43,7 +43,9 @@ function register_theme_menus() {
 
 			'header-menu'  => __('Header Menu'),
 			'markets-nav'  => __('Markets Menu'),
-			'news-nav'  => __('News Menu')
+			'news-nav'  => __('News Menu'),
+			'about-us'  => __('About Us'),
+			'products'  => __('Products')
 
 			)
 
@@ -99,5 +101,7 @@ return $slug; }
 add_theme_support('post-thumbnails');
 
 
+//CUSTOM IMAGE SIZES FOR POST_THUMBNAIL
+add_image_size( 'pdf-image', 250, 9999 ); //300 pixels wide (and unlimited height)
 
 ?>
