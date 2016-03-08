@@ -4,10 +4,17 @@
         <div class="col-md-12">
           <div class="flex-container-grid">
           
+<<<<<<< HEAD
          <?php 
 global $page_tags,$exclude_posts ;
 		if($page_tags){
 			$tag_ids = array ();$tag_slugs = array ();
+=======
+         <?php
+									global $page_tags, $exclude_posts;
+									if ($page_tags) {
+										$tag_ids = array ();$tag_slugs = array ();
+>>>>>>> origin/master
 										foreach ( $page_tags as $_tag ) {
 											$tag_ids [] = $_tag->term_id;
 											$tag_slugs[] = $_tag->slug;
@@ -41,6 +48,7 @@ $mytaxquery->the_post();
 if(!in_array($mytaxquery->post->ID,$exclude_posts_ids)){
 ?>
 
+<<<<<<< HEAD
 <div class="flex-grid-child">
 				<a href="<?php echo the_permalink(); ?>" title="View <?php the_title(); ?>" class="grid-img">
 					<div class="fig">
@@ -64,6 +72,25 @@ wp_reset_query();
 			echo 'No related item found.';
 		}
 ?>
+=======
+									<div class="flex-grid-child">
+											<a href="<?php echo the_permalink(); ?>"
+												title="View <?php the_title(); ?>" class="grid-img">
+												<div class="fig">
+												<?php the_post_thumbnail(array(150,150)); ?>
+												</div>
+												<!--/.fig-->
+												<h4><?php the_title(); ?></h4>
+											</a>
+										</div>
+										<!--/flex-grid-child -->
+
+									<?php } endwhile ; wp_reset_query (); 
+									} else {
+										echo 'No related item found.';
+									}
+									?>
+>>>>>>> origin/master
 
           </div>
 
