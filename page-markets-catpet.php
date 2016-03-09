@@ -1,6 +1,6 @@
 <?php
 /*
-  Template Name:  Markets-catDryPeel
+  Template Name:  Markets-catpet
 */
 ?>
 
@@ -33,7 +33,7 @@
 
             $args = array(
               'post_type' => 'markets-subcontent',
-              'category_name' => 'dry-peel',
+              'category_name' => 'catpet',
               'posts_per_page' => 10
               );
 

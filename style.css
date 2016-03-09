@@ -9,10 +9,23 @@ Dscription: Lauterbach Group Home Website
 
 /*******MOCK UP FIXES**********/
 
+/*************About Us***************/
 
+.flex-1-1 {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
+.flexitem1,
+.flexitem2 {
+    width: 48%;
+}
 
-
+.circle {
+    border-radius: 50%;
+}
 
 /*******TO MATCH MOCK UP WIDTH*******/
 
@@ -25,7 +38,7 @@ Dscription: Lauterbach Group Home Website
 	width: 970px !important;
 }*/
 
-/********GENERAL*********/
+/********GENERAL\GLOBAL*********/
 
 .h3-nomargin {
 	margin: 0 0 1em 0;
@@ -51,7 +64,10 @@ body {
     background-color: #15284b;
 }
 
-
+.img-resp {
+    width: 100%;
+    height: auto;
+}
 
 
 /*********NAV MENU***********/
@@ -273,7 +289,10 @@ border-top: solid 1px;
     max-width: 100%;
 }
 
-
+.post-image  {
+    height: auto;
+    width: 100%;
+}
 /*********************NEWS BODY***************/
 
 .eblast-img {
@@ -318,13 +337,11 @@ border-top: solid 1px;
 }
 
 
+
+
 /******************NEWS SIDEBAR*****************/
 
-.news-flex {
-    display: flex;
-    align-items: center;
- 
-}
+
 
 .pdf-img {
     margin-right: 1em;
@@ -496,9 +513,28 @@ div.social {
 
 
 
+/***************NEWS PAGES**************/
 
+.doc-header {
+    text-align: center;
+    font-size: 1.25em;
+}
 
+.news-flex {
+    
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
+ 
+}
+
+.promo-flex {
+    display: flex;
+    align-items: center;
+}
 
 
 

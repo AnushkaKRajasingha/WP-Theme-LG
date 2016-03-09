@@ -4,7 +4,7 @@
 
 		<?php wp_nav_menu 
                 (array(
-                  'theme_location' => 'products',
+                  'theme_location' => 'about-us',
 
                   'menu_class' => 'sidebar-nav',
                   'container'  => 'false'
