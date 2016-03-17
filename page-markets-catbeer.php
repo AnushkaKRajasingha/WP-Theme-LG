@@ -38,34 +38,9 @@
               );
 
             $query = new WP_Query ( $args );
-            global $page_tags,$exclude_posts ; 
-            $page_tags = array(); $exclude_posts = array();
-          ?>
-        
-
-            <div class="like-content-posts">
-
-              <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();  
-              $t = wp_get_object_terms($query->post->ID,  'about-me' );
-              $page_tags = array_merge($page_tags,$t);
-              $t = wp_get_object_terms($query->post->ID,  'my-likes' );
-              $page_tags = array_merge($page_tags,$t);
-              $exclude_posts[] = $query->post->ID;
-              ?>
-
-                <div class="like-posts">
-                  <h4><?php the_title(); ?></h4>
-                    <?php the_content(); ?>
-                  
-                </div>
-
-              <?php endwhile; endif; wp_reset_postdata(); ?>
-
-            </div>
-
-
-
-        </div>
+            do_action('collect_related_args',$query,array('about-me','my-likes')); 
+            ?>
+         </div>
 
         
         
@@ -75,7 +50,7 @@
      </div>
 
 
-     <?php get_sidebar('products-imggrid'); ?>
+     <?php do_action('display_related','Markets Related','markets-subcontent',array('about-me','my-likes'));?>
 
       
 <?php get_footer(); ?>

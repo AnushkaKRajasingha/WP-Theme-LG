@@ -1,3 +1,6 @@
+</div>
+
+
 <!-- Site footer -->
       <footer class="footer">
 		<div class="footer-flex">
@@ -74,5 +77,6 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
     <?php wp_footer(); ?>
+    </div>
   </body>
 </html>

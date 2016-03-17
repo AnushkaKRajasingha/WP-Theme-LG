@@ -14,7 +14,7 @@
         <div class="col-md-6">
           
             <?php if (have_posts() ) : while (have_posts() ) : the_post(); ?>
-
+<?php  do_action('collect_related_args_v2',get_the_ID(),array('about-me','my-likes')); ?>
               <div class="page-header">
                 <h1><?php the_title(); ?></h1>
               </div>
@@ -39,8 +39,7 @@
 
 
      </div>
-
-     <?php get_sidebar('products-imggrid'); ?>
+<?php do_action('display_related','Markets Related','markets-subcontent',array('about-me','my-likes'));?>
 
       
 <?php get_footer(); ?>

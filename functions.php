@@ -104,4 +104,5 @@ add_theme_support('post-thumbnails');
 //CUSTOM IMAGE SIZES FOR POST_THUMBNAIL
 add_image_size( 'pdf-image', 250, 9999 ); //300 pixels wide (and unlimited height)
 
+require_once 'custom_actions.php';
 ?>
