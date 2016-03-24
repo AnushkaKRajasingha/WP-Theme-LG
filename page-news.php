@@ -60,7 +60,7 @@
                       'post_type'     => 'news',
                       'category_name' => 'press-release',
                       'post_status'   => 'publish',
-                      'post_per_page' => '2',
+                      'posts_per_page' => 3,
                       'order'         => 'ASC',
                       'orderby'       => 'date',
 
@@ -75,7 +75,7 @@
 
                   <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
-                    
+                   <?php  do_action('collect_related_args_v2',$query->post->ID,array('category','post_tag')); ?> 
 
                       <div class="press-release">
                         
@@ -98,6 +98,8 @@
                   <?php endwhile; endif; wp_reset_postdata(); ?>
 
 
+
+                  <h2>Archived Press Releases</h2>
                   <hr>
 
 
@@ -188,7 +190,7 @@
                 ?>
 
                   <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-
+					<?php  do_action('collect_related_args_v2',$query->post->ID,array('category','post_tag')); ?>
                     
 
                       <div class="promo-flex">
@@ -301,6 +303,7 @@
               <div class="news-flex">
                      
                       <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+                      <?php  do_action('collect_related_args_v2',$query->post->ID,array('category','post_tag')); ?>
                           <div>
                             <div class="doc-header">
                               <?php the_title(); ?>
@@ -372,7 +375,7 @@
         <?php else : ?>
           <?php the_content(); ?>
         <?php endif; ?>
-
+ 		
         <!--CALLS FOR SIDEBARS-->
 
 
@@ -400,7 +403,7 @@
         <?php else : ?>
           <?php get_sidebar(); ?>
         <?php endif; ?>
-
+		<div class="col-md-12"><?php do_action('display_related','LG News Related','news',array('category','post_tag'));?></div>	
      </div>
 
      

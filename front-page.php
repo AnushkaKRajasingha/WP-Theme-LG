@@ -20,13 +20,13 @@
 
       <div class="col-md-4">
         
-          <h3 class="h3-nomargin"><span class="glyphicon glyphicon-circle-arrow-right"></span>Learn about Re-Seal Closures</h3>
+          <h3 class="h3-nomargin"><span class="glyphicon glyphicon-circle-arrow-right"></span>Clean Release</h3>
 
       </div>
 
       <div class="col-md-4">
         
-          <h3 class="h3-nomargin"><span class="glyphicon glyphicon-circle-arrow-right"></span>Use Transparent Film</h3>
+          <h3 class="h3-nomargin"><span class="glyphicon glyphicon-circle-arrow-right"></span>Craft Brewery</h3>
 
       </div>
     </div>
@@ -49,7 +49,7 @@
     </div>
 
 
-  <div class="row">
+  <!--<div class="row">
      
      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -57,7 +57,7 @@
 
      <?php endwhile; endif; ?>
 
-  </div>
+  </div>-->
 
      <hr>
 
@@ -66,7 +66,11 @@
     
 
 
-     <?php get_sidebar('products-imggrid'); ?>
+     <?php
+     
+     do_action('display_featured','Featured Products & Markets','featured');
+     
+     ?>
 
      <hr>
             
@@ -78,7 +82,7 @@
       <p>Sussex, WI 53089</p>
       <br>
       <p>Phone : 1-800-841-7301</p>
-      <p>Email : info@lauterbachgroup.com</p>
+      <p>Email : <a href="mailto:info@lauterbachgroup.com?subject=Contact%20from%20website">info@lauterbachgroup.com</a></p>
 
 
     </div>
@@ -109,13 +113,15 @@
 
 
 
+
 <!--End mc_embed_signup-->
 
+              <h4>Or Follow us on Social Media</h4>
                 <div class="social">
-                    <div class="fb"><i class="fa fa-facebook fa-social"></i></div>
-                    <div class="linkedin"><i class="fa fa-linkedin fa-social"></i></div>
-                    <div class="twitter"><i class="fa fa-twitter fa-social"></i></div>
-                    <div class="youtube"><i class="fa fa-youtube fa-social"></i></div>
+                    <div class="fb"><a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/lauterbachgroup/" target="_blank"><span class="fa fa-facebook"></span></a></div>
+                    <div class="linkedin"><a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/company/lauterbach-group-inc" target="_blank"><span class="fa fa-linkedin"></span></a></div>
+                    <div class="twitter"><a class="btn btn-social-icon btn-twitter" href="https://twitter.com/LauterbachGroup" target="_blank"><span class="fa fa-twitter"></span></a></div>
+                    <div class="youtube"><a href="https://www.youtube.com/channel/UClIeicAvWo2gtrnk7Lk4JsQ" target="_blank"><i class="fa fa-youtube fa-social"></i></a></div>
                 </div>
 
     </div>
@@ -129,7 +135,7 @@
             $args = array(
               'post_type'     => 'news',
               'post_status'   => 'publish',
-              'post_per_page' => '6',
+              'posts_per_page' =>  3,
               'order'         => 'DESC',
               'orderby'       => 'date'
               

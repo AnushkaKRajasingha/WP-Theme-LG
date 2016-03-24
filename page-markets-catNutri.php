@@ -43,6 +43,8 @@
             <div class="like-content-posts">
 
               <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+              
+              <?php  do_action('collect_related_args_v2',$query->post->ID,array('about-me','my-likes')); ?>
 
                 <div class="like-posts">
                   <h4><?php the_title(); ?></h4>
@@ -64,8 +66,7 @@
 
      </div>
 
-
-     <?php get_sidebar('products-imggrid'); ?>
+ <?php do_action('display_related','Markets Related','markets-subcontent',array('about-me','my-likes'));?>
 
       
 <?php get_footer(); ?>

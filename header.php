@@ -28,18 +28,18 @@
   </head>
 
   <body <?php body_class(); ?>>
+  <div class="site-wrapper">
+    <div class="container">
+      <div class="flex-logo-row">
+        <div class="flex-logo-child1">
+            <img src="/wp-content/uploads/2016/01/logo_transparent.png" alt="logo">
+        </div>
 
-  <div class="container">
-    <div class="flex-logo-row">
-      <div class="flex-logo-child1">
-          <img src="/wp-content/uploads/2016/01/logo_transparent.png" alt="logo">
-      </div>
-
-      <div class="flex-logo-child2">
-          <p>Begin your 48 hour prototype now <i class="fa fa-arrow-circle-o-right fa-my"></i></p>
+        <div class="flex-logo-child2">
+            <p>Begin your 48 hour prototype now <i class="fa fa-arrow-circle-o-right fa-my"></i></p>
+        </div>
       </div>
     </div>
-  </div>
 
     <div class="navbar-wrapper">
       <div class="container flex-trial">
@@ -81,5 +81,5 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container body-wrapper">
 

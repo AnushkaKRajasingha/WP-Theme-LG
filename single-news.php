@@ -9,10 +9,10 @@
 
 <div class="row sub-markets-home">
 
-  <?php get_sidebar('markets-nav'); ?>
+  <?php get_sidebar('news-nav'); ?>
 
       <div class="col-md-6">
-			<?php do_action('collect_related_args_v1',array('about-me','my-likes'));?> 
+			<?php do_action('collect_related_args_v1',array('category','post_tag'));?> 
       </div>
 
   <!--Content Sidebar-->
@@ -22,7 +22,7 @@
 
 </div>      
   
-  <?php get_sidebar('products-imggrid'); ?>
+  <?php do_action('display_related','LG News Related','news',array('category','post_tag'));?>
       
 <?php get_footer(); ?>
 

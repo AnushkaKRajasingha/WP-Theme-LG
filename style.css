@@ -9,6 +9,9 @@ Dscription: Lauterbach Group Home Website
 
 /*******MOCK UP FIXES**********/
 
+/***************STICKY FOOTER**************/
+
+
 /*************About Us***************/
 
 .flex-1-1 {
@@ -69,14 +72,22 @@ body {
     height: auto;
 }
 
+.site-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+}
 
+.footer {
+    margin-left: 15px;
+    margin-right: 15px;
+}
 /*********NAV MENU***********/
 
 @media (min-width:768px) {
     .sub-menu {
         display: none;
         position: absolute;
-        background: #222;
+        background: #fff;
         padding: 10px 15px;
         width: 200px;       
     }
@@ -88,7 +99,7 @@ body {
 }
 
 .sub-menu li {
-    margin-bottom: 10px;
+   /* margin-bottom: 10px;*/
     list-style: none;
 }
 
@@ -97,16 +108,16 @@ body {
 }
 
 .sub-menu a  {
-    color: #999;
+    color: #000;
     text-decoration: none;
 }
 
 .sub-menu a:hover  {
-    color: #fff;    
+    color: green;    
 }   
 
 #navbar li.current-menu-item > a, .current-menu-parent > a {
-    background: #000;   
+   color: green;
 }
 .current-menu-parent li a {
     background: inherit;
@@ -123,15 +134,31 @@ body {
     border-top-left-radius: 10px;
 }
 
-ul#menu-menu-1 li {
+ul#menu-primary-navigation li {
     border-left: 1px solid white;
     border-right: 1px solid white;
-    padding: 0 20px;
+    padding: 0 15px;
+    font-size: 1.1em;
 }
 
-#menu-menu-1 ul.sub-menu li {
+#menu-primary-navigation ul.sub-menu li {
     border: 0 none;
 }
+
+
+ul#menu-primary-navigation li:last-child {
+    border-bottom-right-radius: 10px;
+    border-color: white;
+    border-right: 1px solid white;
+    border-top-right-radius: 10px;
+    border-width: 1px;
+    border-right: 2px solid white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #FFF
+}
+
 /*******NAV BAR TRIALS*********/
 #mynav {
     display: inline-block;
@@ -165,13 +192,7 @@ ul#menu-menu-1 li {
     top: 0.5em;
     width: 4em;
 }
-/*div#navbar ul li:last-child {
-    border-color: white;
-    border-width: 2px;
-    border-right-style: solid;
-    /* border-radius: 50px; */
-  /*  border-top-right-radius: 2em;
-    border-bottom-right-radius: 2em;*/
+
 
 
 
@@ -185,8 +206,8 @@ ul#menu-menu-1 li {
 
 		}
 
-		/* CAN POSSIBLY TAKE OUT AS I NEED TO FIND A DIFFERENT METHOD FOR THIS
-		.flex-nav {
+		 CAN POSSIBLY TAKE OUT AS I NEED TO FIND A DIFFERENT METHOD FOR THIS
+		/*.flex-nav {
 			display: inline-flex !important;
 			justify-content: space-around !important;
 			flex-wrap: wrap;
@@ -197,7 +218,9 @@ ul#menu-menu-1 li {
 			font-size: 1.75em;
 		}
 
-
+        .flex-nav {
+            flex-grow: 2;
+        }
 
 
 /****************PRODUCTS & MARKETS & TERTIARY PAGES SIDENAV DESIGN**********************/
@@ -485,7 +508,8 @@ div.social {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    width: 80%;
+    width: 60%;
+    font-size: .75em;
     
 }
 
