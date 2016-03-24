@@ -9,12 +9,13 @@
 	});	
 	var toggle_menu = function($this){		
 		_curr_menu = $($this).find('.sub-menu');		
-		if(_prev_menu != null){
-			$(_prev_menu).hide();
+		if(_prev_menu != null){			
 			if(_prev_menu[0] == _curr_menu[0]){
-				_prev_menu = null;
+				$(_prev_menu).slideUp();
+				_prev_menu = null;				
 				return;
 			}
+			$(_prev_menu).hide();
 		}
 		$($this).find('.sub-menu').slideToggle();
 		_prev_menu = $($this).find('.sub-menu') ;
